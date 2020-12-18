@@ -24,7 +24,7 @@
     <div class="card">
         <h5 class="card-header">Название</h5>
         <div class="card-body">
-            <p class="card-text">${post.name}</p>
+            <p class="card-text"><c:out value="${post.name}"/></p>
         </div>
     </div>
     <div class="card">

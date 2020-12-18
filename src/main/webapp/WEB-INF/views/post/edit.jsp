@@ -44,7 +44,7 @@
                 <input type="text" class="form-control" id="name" placeholder="Введите название" name="name">
             </c:if>
             <c:if test="${post.id != 0}">
-                <input type="text" class="form-control" id="name" placeholder="Введите название" name="name" value=${post.name}>
+                <input type="text" class="form-control" id="name" placeholder="Введите название" name="name" value="${post.name}" >
             </c:if>
         </div>
         <div class="form-group">
@@ -53,7 +53,7 @@
                 <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description">
             </c:if>
             <c:if test="${post.id != 0}">
-                <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description" value=${post.description}>
+                <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description" value="${post.description}">
             </c:if>
         </div>
         <button type="submit" class="btn btn-default">Сохранить</button>

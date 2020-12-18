@@ -1,13 +1,20 @@
 package ru.job4j.forum.model;
 
-import java.util.Calendar;
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Entity
+@Table(name = "posts")
 public class Post {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
-    private Calendar created;
+    private Timestamp created = Timestamp.valueOf(LocalDateTime.now());
 
     public static Post of(int id, String name) {
         Post post = new Post();
@@ -40,11 +47,11 @@ public class Post {
         this.description = description;
     }
 
-    public Calendar getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(Calendar created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
