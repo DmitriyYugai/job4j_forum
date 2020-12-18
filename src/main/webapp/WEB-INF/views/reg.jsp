@@ -35,7 +35,7 @@
                 Регистрация
             </div>
             <div class="card-body">
-                <form action="/accident/reg" method="post" onsubmit="return validate()">
+                <form action="/reg" method="post" onsubmit="return validate()">
                     <div class="form-group">
                         <label>Имя пользователя</label>
                         <input type="text" class="form-control" name="username" id="username">

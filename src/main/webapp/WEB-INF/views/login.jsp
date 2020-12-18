@@ -46,7 +46,7 @@
                     </div>
                     <div class="row">
                         <button type="submit" class="btn btn-primary">Войти</button>
-                        <a class="nav-link" href="/accident/reg">Регистрация</a>
+                        <a class="nav-link" href="/reg">Регистрация</a>
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

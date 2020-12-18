@@ -16,7 +16,12 @@
 <body>
 <div class="container mt-3">
     <div class="row">
-        <h4>Форум job4j</h4>
+        <div class="col-8"><h4>Форум job4j</h4></div>
+        <div class="col-4">
+            <span class='pull-right'>${user.username} | </span>
+            <a href="/logout" class='pull-right'>Выйти</a><br>
+            <a href="/reg" class='pull-right'>Регистрация</a>
+        </div>
     </div>
     <div class="row">
         <table class="table">

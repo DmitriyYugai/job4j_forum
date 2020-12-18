@@ -31,12 +31,21 @@
 <body>
 
 <div class="container">
-    <c:if test="${post.id == 0}">
-        <h2>Создание поста</h2>
-    </c:if>
-    <c:if test="${post.id != 0}">
-        <h2>Редактирование поста</h2>
-    </c:if>
+    <div class="row">
+        <div class="col-8">
+            <c:if test="${post.id == 0}">
+                <h4>Создание поста</h4>
+            </c:if>
+            <c:if test="${post.id != 0}">
+                <h4>Редактирование поста</h4>
+            </c:if>
+        </div>
+        <div class="col-4">
+            <a href="/logout" class='pull-right'>Выйти</a>
+            <span class='pull-right'>${user.username} | </span><br>
+            <a href="/reg" class='pull-right'>Регистрация</a>
+        </div>
+    </div>
     <form action="/post/save?id=${post.id}" method="post" onsubmit="return validate()">
         <div class="form-group">
             <label id="nameLabel" for="name">Название</label>

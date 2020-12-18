@@ -22,7 +22,16 @@
 </head>
 <body>
     <div class="card">
-        <h5 class="card-header">Название</h5>
+        <h5 class="card-header">
+            <div class="row">
+                <div class="col-8">Название</div>
+                <div class="col-4">
+                    <span class='pull-right'>${user.username} | </span>
+                    <a href="/logout" class='pull-right'>Выйти</a><br>
+                    <a href="/reg" class='pull-right'>Регистрация</a>
+                </div>
+            </div>
+        </h5>
         <div class="card-body">
             <p class="card-text"><c:out value="${post.name}"/></p>
         </div>
