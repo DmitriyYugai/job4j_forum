@@ -6,11 +6,12 @@ import java.util.Objects;
 public class Post {
     private int id;
     private String name;
-    private String desc;
+    private String description;
     private Calendar created;
 
-    public static Post of(String name) {
+    public static Post of(int id, String name) {
         Post post = new Post();
+        post.id = id;
         post.name = name;
         return post;
     }
@@ -31,12 +32,12 @@ public class Post {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Calendar getCreated() {
@@ -54,12 +55,12 @@ public class Post {
         Post post = (Post) o;
         return id == post.id &&
                 Objects.equals(name, post.name) &&
-                Objects.equals(desc, post.desc) &&
+                Objects.equals(description, post.description) &&
                 Objects.equals(created, post.created);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, desc, created);
+        return Objects.hash(id, name, description, created);
     }
 }

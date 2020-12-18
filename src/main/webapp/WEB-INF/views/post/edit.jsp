@@ -31,15 +31,30 @@
 <body>
 
 <div class="container">
-    <h2>Редактировать инцидент</h2>
-    <form action="/accident/update?id=${accident.id}" method="post" onsubmit="return validate()">
+    <c:if test="${post.id == 0}">
+        <h2>Создание поста</h2>
+    </c:if>
+    <c:if test="${post.id != 0}">
+        <h2>Редактирование поста</h2>
+    </c:if>
+    <form action="/post/save?id=${post.id}" method="post" onsubmit="return validate()">
         <div class="form-group">
             <label id="nameLabel" for="name">Название</label>
-            <input type="text" class="form-control" id="name" placeholder="Введите название" name="name" value=${accident.name}>
+            <c:if test="${post.id == 0}">
+                <input type="text" class="form-control" id="name" placeholder="Введите название" name="name">
+            </c:if>
+            <c:if test="${post.id != 0}">
+                <input type="text" class="form-control" id="name" placeholder="Введите название" name="name" value=${post.name}>
+            </c:if>
         </div>
         <div class="form-group">
             <label id="descLabel" for="description">Описание</label>
-            <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description" value=${accident.text}>
+            <c:if test="${post.id == 0}">
+                <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description">
+            </c:if>
+            <c:if test="${post.id != 0}">
+                <input type="text" class="form-control" id="description" placeholder="Добавьте описание" name="description" value=${post.description}>
+            </c:if>
         </div>
         <button type="submit" class="btn btn-default">Сохранить</button>
     </form>

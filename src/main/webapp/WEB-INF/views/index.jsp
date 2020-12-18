@@ -28,12 +28,13 @@
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
-                    <td><c:out value="${post.name}"/></td>
+                    <td><a href="/post?id=${post.id}"><c:out value="${post.name}"/></a></td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
     </div>
+    <a class="btn btn-primary" href="/post/edit">Создать</a>
 </div>
 
 <!-- Optional JavaScript -->
