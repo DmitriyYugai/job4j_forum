@@ -5,6 +5,10 @@ jdk: oraclejdk14
 # используем режим обычного пользователя для сборки проекта.
 sudo: false
 
+install: true
+
+script: mvn clean package -DskipTests=true
+
 # после выполнения сборки запустить скрипт, который будет собирать статистику по JaCoCo
 # Здесь используется сторонни сервис https://codecov.io/
 after_success:
@@ -24,3 +28,10 @@ notifications:
 env:
   global:
     - CODECOV_TOKEN="a209e88d-d82b-4c88-a03e-d8acb659fd5d"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: efsAYUsfNMgk9N4psHFyMCoBjV5cx6hPfdzfJKqbXwv4gvdNOzV+OmgI+2O/+xcM6Qfk4LftyRNF+FEBxG7sIJ+Hi+31VHvgO52IiSrofp2IK0PbwfLcy9jfqNNyxs+acrhkxWfwS+uGdXBHGxs1z5w7eSmNSuj43aJetMF9RF80TkD831u2uiqYNre+2Fp2fhDr55YpW3pHbB5vjtxJDzJW0lMUlc52wzsgPgBog19DIasve1CgYMlcadZB5h3Kao8pAqIREq4eR9L+uzpQ62yuDJIbyzP77+NUu2yp7d4zBqib9wL58CbdVqK/7AV/rLzDi0rIfMWuHL8tI1DjBp2sgXT9tIu6puVvqiUst299K3ipDtlN4sUhhEx0ddFBQKQ/7MeScnV81Z7lfUe0ASpFwZVcxxtl0ITIfGBAK1ruBAtrSIgRBbhxxy5KVrCfzXnCJYXKfRRugZU3VqYu56FiJOFMhpqZuUUW+4hRw9p2+TyBZ9Qatz/ugcNa6Gpqs5mC0V7Kthjv5mmCQOhaiDAq0nYcghAl/DyQt8fMHHjpX5bnwD3Ea3oGASAmdqn35tCpIQUQRXhII56tmtbPXk/Uez75lFokskQ/h/I4fsj7lQpK0kQUQK4uVI9Gdh5p0jTZu8CLPPJ0EW4Z060XcTdaiXFLTveiC9T5+pRjl1E=
+  app: stark-reef-21545
+
