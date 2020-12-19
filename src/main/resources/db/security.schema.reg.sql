@@ -21,7 +21,7 @@ insert into users (username, password, enabled, authority_id)
 values ('root', '$2a$10$bWNv3btMvnRQAUXJmFTBKupES8F9eW5qjtav4uiLJ.mq5JmA5xyPO', true,
         (select id from authorities where authority = 'ROLE_ADMIN'));
 
-SELECT * FROM users;
-
-SELECT * FROM authorities;
+-- SELECT * FROM users;
+--
+-- SELECT * FROM authorities;
 
