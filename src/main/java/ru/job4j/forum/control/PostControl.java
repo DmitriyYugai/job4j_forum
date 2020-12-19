@@ -38,6 +38,6 @@ public class PostControl {
     @PostMapping("post/save")
     public String save(@ModelAttribute Post post) {
         posts.savePost(post);
-        return"redirect:/";
+        return "redirect:/";
     }
 }
