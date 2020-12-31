@@ -27,7 +27,7 @@ public class LoginControl {
             errorMessage = "Вы успешно вышли!";
         }
         model.addAttribute("errorMessage", errorMessage);
-        return "/login";
+        return "login";
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
