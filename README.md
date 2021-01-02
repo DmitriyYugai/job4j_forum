@@ -9,6 +9,7 @@
 * [Контакты](#Контакты)
 ## Использованные технологии
 * Spring Boot
+* Spring Core (DI, IoC)
 * Spring MVC
 * Spring Test
 * Spring Data JPA
